@@ -8,6 +8,7 @@ cask "glance" do
   homepage "https://github.com/TristanLaR/glance"
 
   app "glance.app"
+  binary "glance.app/Contents/MacOS/glance"
 
   zap trash: [
     "~/Library/Application Support/com.glance.app",
