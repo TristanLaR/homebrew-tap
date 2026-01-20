@@ -6,7 +6,7 @@ class Glance < Formula
 
   on_macos do
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-macos.tar.gz"
-    sha256 "b3e0ee4eefa604813ce77642f19f2cdbd2a61dea234fc11844f7e929a4f92266"
+    sha256 "19ef3b9bc884850f6ee78b56d57788cc3a1bd872555075635703ada5f08a3176"
 
     def install
       prefix.install "glance.app"
@@ -16,13 +16,23 @@ class Glance < Formula
 
   on_linux do
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-linux-x86_64.tar.gz"
-    sha256 "5c9a1a45bc2b01d226c70db9be93ebe68498361ce5581f314e873e11c61dedfb"
+    sha256 "9e3dc3804ecc7f8eb3482261eb1148433e5c2df40182f045cccba99faf833749"
 
     depends_on "gtk+3"
     depends_on "webkit2gtk"
 
     def install
       bin.install "glance"
+    end
+  end
+
+  def caveats
+    on_linux do
+      <<~EOS
+        glance requires GTK3 and WebKit2GTK runtime libraries.
+        If not installed via Homebrew, install them with:
+          sudo apt install libwebkit2gtk-4.0-37 libgtk-3-0
+      EOS
     end
   end
 
