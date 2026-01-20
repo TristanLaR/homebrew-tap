@@ -18,9 +18,6 @@ class Glance < Formula
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-linux-x86_64.tar.gz"
     sha256 "9e3dc3804ecc7f8eb3482261eb1148433e5c2df40182f045cccba99faf833749"
 
-    depends_on "gtk+3"
-    depends_on "webkit2gtk"
-
     def install
       bin.install "glance"
     end
@@ -29,8 +26,7 @@ class Glance < Formula
   def caveats
     on_linux do
       <<~EOS
-        glance requires GTK3 and WebKit2GTK runtime libraries.
-        If not installed via Homebrew, install them with:
+        Linux users: Install runtime dependencies first:
           sudo apt install libwebkit2gtk-4.0-37 libgtk-3-0
       EOS
     end
