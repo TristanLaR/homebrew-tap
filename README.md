@@ -1,29 +1,22 @@
-# Homebrew Tap for Glance
+# Homebrew Tap
 
-This tap contains the Homebrew Cask for [Glance](https://github.com/TristanLaR/glance), a minimal markdown viewer.
+Custom Homebrew tap for [Glance](https://github.com/TristanLaR/glance) - a minimal markdown viewer.
 
 ## Installation
 
 ```bash
-brew tap TristanLaR/tap
-brew install --cask glance
+brew install TristanLaR/tap/glance
+```
+
+Works on both **macOS** and **Linux**.
+
+### macOS Alternative (installs .app bundle)
+
+```bash
+brew install --cask TristanLaR/tap/glance
 ```
 
 ## Usage
-
-After installation, you can open markdown files with:
-
-```bash
-open -a Glance file.md
-```
-
-Or add to your shell config for quick access:
-
-```bash
-alias glance='open -a Glance'
-```
-
-Then use:
 
 ```bash
 glance README.md
