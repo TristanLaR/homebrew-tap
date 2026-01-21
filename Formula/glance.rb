@@ -11,6 +11,22 @@ class Glance < Formula
     def install
       prefix.install "glance.app"
       bin.write_exec_script prefix/"glance.app/Contents/MacOS/glance"
+
+      # Install shell completions
+      zsh_completion.write <<~EOS
+        #compdef glance
+        _glance() {
+          _arguments '1: :_files -g "*.md"' && return 0
+        }
+        _glance
+      EOS
+
+      bash_completion.write <<~EOS
+        _glance_completion() {
+          COMPREPLY=($(compgen -f -- "${COMP_WORDS[1]}"))
+        }
+        complete -o default -o bashdefault -o filenames -F _glance_completion glance
+      EOS
     end
   end
 
@@ -20,6 +36,22 @@ class Glance < Formula
 
     def install
       bin.install "glance"
+
+      # Install shell completions
+      zsh_completion.write <<~EOS
+        #compdef glance
+        _glance() {
+          _arguments '1: :_files -g "*.md"' && return 0
+        }
+        _glance
+      EOS
+
+      bash_completion.write <<~EOS
+        _glance_completion() {
+          COMPREPLY=($(compgen -f -- "${COMP_WORDS[1]}"))
+        }
+        complete -o default -o bashdefault -o filenames -F _glance_completion glance
+      EOS
     end
   end
 
