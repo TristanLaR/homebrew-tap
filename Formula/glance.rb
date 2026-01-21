@@ -26,8 +26,9 @@ class Glance < Formula
   def caveats
     on_linux do
       <<~EOS
-        Linux users: Install runtime dependencies first:
+        Run this once to complete setup:
           sudo apt install libwebkit2gtk-4.0-37 libgtk-3-0
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc && source ~/.bashrc
       EOS
     end
   end
