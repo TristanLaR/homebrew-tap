@@ -59,7 +59,7 @@ class Glance < Formula
     on_linux do
       <<~EOS
         Run this once to complete setup:
-          sudo apt install libwebkit2gtk-4.0-37 libgtk-3-0
+          sudo apt install libwebkit2gtk-4.1-0 libgtk-3-0
           echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc && source ~/.bashrc
       EOS
     end
