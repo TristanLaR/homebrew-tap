@@ -6,7 +6,7 @@ class Glance < Formula
 
   on_macos do
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-macos.tar.gz"
-    sha256 "eb709421e0c42018c674fa3cf59d34874d82385de74308dc2d402824d9a24062"
+    sha256 "9e7b8e723d76caf304167047d97dd77eed0f1abb15dba10ccbc5069fa36d9ac7"
 
     def install
       prefix.install "glance.app"
@@ -32,7 +32,7 @@ class Glance < Formula
 
   on_linux do
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-linux-x86_64.tar.gz"
-    sha256 "7ad38c270a73732b3a35d8efea5356f47584cb9607685ec883ad4d47a9f7f630"
+    sha256 "842862df07e70ed90924ec94774e5aa905d969019d829e8d2ef62c3396c90f0b"
 
     def install
       bin.install "glance"
