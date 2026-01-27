@@ -1,12 +1,12 @@
 class Glance < Formula
   desc "Minimal markdown viewer with live preview"
   homepage "https://github.com/TristanLaR/glance"
-  version "0.1.1"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-macos.tar.gz"
-    sha256 "7a17e955bf8c21f380f548a374ef24d74d2f27d0588298308865ddcdce2730a0"
+    sha256 "1a62aca99606dd4ab4329d5b72a710b8c81339e5ea163c37ce2ef01fd5773169"
 
     def install
       prefix.install "glance.app"
@@ -32,7 +32,7 @@ class Glance < Formula
 
   on_linux do
     url "https://github.com/TristanLaR/glance/releases/download/v#{version}/glance-linux-x86_64.tar.gz"
-    sha256 "603e0e243255503514acc5d6dddb2c88fd142c50c6003f5c694809457d756b9d"
+    sha256 "de0c56226dc3ecbe45989e0aa621169e5fa0e737a868cd144214e0f144bf6b4d"
 
     def install
       bin.install "glance"
@@ -58,9 +58,8 @@ class Glance < Formula
   def caveats
     on_linux do
       <<~EOS
-        Run this once to complete setup:
-          sudo apt install libwebkit2gtk-4.1-0 libgtk-3-0
-          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc && source ~/.bashrc
+        Required system dependency (run once):
+          sudo apt install libwebkit2gtk-4.0-0 libgtk-3-0
       EOS
     end
   end
