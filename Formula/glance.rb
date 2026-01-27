@@ -59,7 +59,7 @@ class Glance < Formula
     on_linux do
       <<~EOS
         Required system dependency (run once):
-          sudo apt install libwebkit2gtk-4.0-0 libgtk-3-0
+          sudo apt install libwebkit2gtk-4.1-0 libgtk-3-0
       EOS
     end
   end
